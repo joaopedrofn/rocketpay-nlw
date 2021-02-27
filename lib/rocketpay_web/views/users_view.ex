@@ -19,4 +19,23 @@ defmodule RocketpayWeb.UsersView do
       }
     }
   end
+
+  def render("signed.json", %{
+        user: %User{
+          id: id,
+          name: name,
+          nickname: nickname
+        },
+        token: token
+      }) do
+    %{
+      message: "User created",
+      user: %{
+        id: id,
+        name: name,
+        nickname: nickname
+      },
+      token: token
+    }
+  end
 end
